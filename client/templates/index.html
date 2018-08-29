@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Web Developer Interview Task</title>
+    <link rel="stylesheet" href="output/bundle.css">
+</head>
+
+<body>
+    <!-- Theme selector -->
+    <div class="theme-buttons">
+        <button id="theme-btn-0">Festive</button>
+        <button id="theme-btn-1">Azure</button>
+        <button id="theme-btn-2">Flamingo</button>
+    </div>
+
+    <div class="users-dna-wrap">
+        <div class="users-dna">
+            <div class="users-dna-title">MY DNA</div>
+            <ul id="my-dni"></ul>
+        </div>
+        <div class="users-dna">
+            <div class="users-dna-title">Other DNA</div>
+            <ul id="other-dni"></ul>
+        </div>
+    </div>
+    <!-- Template -->
+
+
+    <!-- System.js configuration, this loads the js files -->
+    <script src="../../node_modules/systemjs/dist/system.src.js"></script>
+    <script>
+        {
+            // THIS IS OPTIONAL for loading node_modules
+            const modules = [
+                // for `import React from 'react'` to work, uncomment this line:
+                // {name: 'react', main: '/dist/react.js'}
+            ];
+
+            let map = {},
+                packages = {output: {defaultExtension: 'js'}};
+            modules.forEach(module => {
+                map[module.name] = `node_modules/${module.name}`;
+                packages[module.name] = {main: module.main, defaultExtension: 'js'};
+            });
+            System.config({map, packages});
+            System.import('output/main.js')
+                .catch(e => console.log(e));
+        }
+    </script>
+    <!-- End of System.js configuration -->
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+a {
+    display: block;
+}
+
+// THEMES
+// ======
+
+body {
+    transition: background-color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+.festive {
+    background-color: rgba(rebeccapurple, 0.3);
+}
+.azure {
+    background-color: paleturquoise;
+}
+.flamingo {
+    background-color: pink;
+}
+
+
+//DNA Info boxes
+
+.users-dna ul {
+    display: none;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.users-dna.active  ul {
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    display: block !important;
+    border-radius: 5px;
+    margin: -5px 0 0 0;
+    padding: 20px;
+}
+
+.users-dna.active  ul li {
+    list-style: none;
+}
+
+.users-dna-wrap {
+    display: flex;
+    margin-top: 5em;
+}
+
+.users-dna {
+    width: 30em;
+    margin: 0 3em;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.users-dna-title {
+    background: black;
+    color: white;
+    line-height: 2.5em;
+    padding: 0 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active .users-dna-title {
+    border-radius: 5px 5px 0 0;
+}
